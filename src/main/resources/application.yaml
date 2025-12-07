@@ -1,0 +1,20 @@
+server:
+  port: 443
+  forward-headers-strategy: framework
+  ssl:
+    certificate-private-key: classpath:zerossl/private.key
+    certificate: classpath:/zerossl/certificate.crt
+
+spring:
+
+  application:
+    name: spring-app-https-db
+
+  config:
+    import:
+      - "application_dev.yml"
+      - "application_prod.yml"
+  profiles:
+    active:
+      - ${ENV:dev}
+

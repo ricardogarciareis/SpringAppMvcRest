@@ -1,0 +1,4 @@
+FileToBeIgnored.txt
+application_dev.yml
+Dockerfile
+.git

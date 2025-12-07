@@ -1,0 +1,21 @@
+spring:
+
+  config:
+    activate:
+      on-profile: "prod"
+
+  application:
+    name: spring-app-https-db
+
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:mariadb://${DB_HOST:127.0.0.1}:${DB_PORT:18200}/${DB_NAME:dzrrcreations}
+    username: ${DB_USER}
+    password: ${DB_PWD}
+    driver-class-name: org.mariadb.jdbc.Driver
